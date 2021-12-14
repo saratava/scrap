@@ -1,6 +1,7 @@
 import csv
 import pymysql
 
+
 config={
     'user':'sarat', #nome do Usuário do Banco
     'host':'localhost', #nome do Host do Banco
@@ -11,13 +12,13 @@ config={
 cnx = pymysql.connect(**config, charset='utf8mb4') #Conexão
 cursor = cnx.cursor() #Executar as querys
 
-input_file = csv.DictReader(open("sheets/df_negativa_nova.csv", encoding='utf-8'))
+input_file = csv.DictReader(open("sheets/df_negativa.csv", encoding='utf-8'))
 
 for row in input_file:
 
-    # cursor.execute("insert into mydatabase.aval_negativa (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) \
-    # values (%s, %s, %s, %s, %s, %s)",(row['content'],row['score'],row['thumbsUpCount'],row['reviewCreatedVersion'],
-    # row['at'],row['replyContent']))
+    cursor.execute("insert into mydatabase.aval_negativa (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) \
+    values (%s, %s, %s, %s, %s, %s)",(row['content'],row['score'],row['thumbsUpCount'],row['reviewCreatedVersion'],
+    row['at'],row['replyContent']))
 
     # cursor.execute("CREATE TABLE aval_negativa (id INT AUTO_INCREMENT PRIMARY KEY, content VARCHAR(1000), score INT, thumbsUpCount INT, reviewCreatedVersion VARCHAR(100), at TIMESTAMP, replyContent VARCHAR(1000))")
 
@@ -27,8 +28,9 @@ for row in input_file:
 
     # cursor.execute("OPTIMIZE TABLE scrap")
 
-    cursor.execute("SELECT * FROM aval_negativa WHERE score =2")
-    for x in cursor:
-        print(x)
+    # cursor.execute("SELECT * FROM aval_negativa WHERE score =2")
+    # for x in cursor:
+    #     print(x)
 
     cnx.commit()
+
