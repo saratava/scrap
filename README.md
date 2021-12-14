@@ -47,7 +47,7 @@ Este projeto consiste em:
 
 ## Exemplo de Análises Obtidas com Pandas Profiling:
 <div style="display: inline_block">
-     <img align="center" alt="sara-HTML" height="500" width="1000" src="https://github.com/saractavares/scraping-python-google-play-scraper/blob/main/readme/aval_positivas.png?raw=true">
+     <img align="center" alt="sara-HTML" src="https://github.com/saractavares/scraping-python-google-play-scraper/blob/main/readme/aval_positivas.png?raw=true">
 </div>
 
 ### Planos Para o Futuro:
