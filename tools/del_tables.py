@@ -16,8 +16,8 @@ cnx.commit()
 print('Tabelas Criadas')
 
 
-# cursor.execute("DROP TABLE aval_positiva")
-# cursor.execute("DROP TABLE aval_negativa")
-# cursor.execute("DROP TABLE aval_neutra")
-# cnx.commit()
-# print('Tabelas apagadas')
+cursor.execute("DROP TABLE aval_positiva")
+cursor.execute("DROP TABLE aval_negativa")
+cursor.execute("DROP TABLE aval_neutra")
+cnx.commit()
+print('Tabelas apagadas')
