@@ -8,10 +8,10 @@ import os
 # App Scraping Alexa - google play
 br_reviews = reviews_all(
     'com.amazon.dee.app',
-    lang='pt',  # defaults to 'en'
-    sleep_milliseconds=0,  # defaults to 0 
-    country='br',  # defaults to 'us'
-    sort=Sort.NEWEST,  # defaults to Sort.MOST_RELEVANT
+    lang='pt',
+    sleep_milliseconds=0,
+    country='br',
+    sort=Sort.NEWEST,
 )
 
 # Geração de DataFrame do atributo Review do App Alexa
@@ -39,6 +39,7 @@ profile_positivo = pr(df_positiva, title='Report Geral Reviews Alexa - Avaliaç�
 profile_positivo.to_notebook_iframe()
 
 profile_positivo.to_file(output_file=f"{path}/Report_Positivas.html")
+profile_positivo.to_file(output_file=f"{path}/backup_report/Report_Positivas.html")
 
 # Report Neutras
 profile_neutra = pr(df_neutra, title='Report Geral Reviews Alexa - Avaliações Neutras', html={'style':{'full_width':True}})
@@ -46,6 +47,7 @@ profile_neutra = pr(df_neutra, title='Report Geral Reviews Alexa - Avaliações 
 profile_neutra.to_notebook_iframe()
 
 profile_neutra.to_file(output_file=f"{path}/Report_Neutras.html")
+profile_positivo.to_file(output_file=f"{path}/backup_report/Report_Neutras.html")
 
 # Report Negativas
 profile_negativa = pr(df_negativa, title='Report Geral Reviews Alexa - Avaliações Negativas', html={'style':{'full_width':True}})
@@ -53,26 +55,17 @@ profile_negativa = pr(df_negativa, title='Report Geral Reviews Alexa - Avaliaç�
 profile_negativa.to_notebook_iframe()
 
 profile_negativa.to_file(output_file=f"{path}/Report_Negativas.html")
+profile_positivo.to_file(output_file=f"{path}/backup_report/Report_Negativas.html")
 
 df_positiva.to_csv(f"{path}/df_positiva.csv", index=False)               
 df_neutra.to_csv(f"{path}/df_neutra.csv", index=False)                   
 df_negativa.to_csv(f"{path}/df_negativa.csv", index=False) 
 
+df_positiva.to_csv(f"{path}/backup_csv/df_positiva.csv", index=False)               
+df_neutra.to_csv(f"{path}/backup_csv/df_neutra.csv", index=False)                   
+df_negativa.to_csv(f"{path}/backup_csv/df_negativa.csv", index=False) 
+
 print('_____________ Acionando o Banco _____________')
 
 import request_database
 print(request_database)
-
-
-
-            
-##########################  Package Tools ########################## 
-# Gerar planilha completa pela primeira vez:                       #
-# df_final.to_excel("scraping_com_python-limpa.xlsx", index=False) #
-#                                                                  #
-# Gerar planilhas de acordo com score:                             #
-# df_positiva.to_csv("df_positiva.csv", index=False)               #
-# df_neutra.to_csv("df_neutra.csv", index=False)                   #
-# df_negativa.to_csv("df_negativa.csv", index=False)               #
-#                                                                  #
-####################################################################
