@@ -15,8 +15,6 @@ cursor.execute("CREATE TABLE aval_neutra (id INT AUTO_INCREMENT PRIMARY KEY, con
 cnx.commit()
 print('Tabelas Criadas')
 
-
-
 cursor.execute("DROP TABLE aval_positiva")
 cursor.execute("DROP TABLE aval_negativa")
 cursor.execute("DROP TABLE aval_neutra")
