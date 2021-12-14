@@ -38,35 +38,33 @@ profile_positivo = pr(df_positiva, title='Report Geral Reviews Alexa - Avaliaç�
 
 profile_positivo.to_notebook_iframe()
 
-profile_positivo.to_file(output_file=f"{path}/Reports-html/Report_Positivas.html")
+profile_positivo.to_file(output_file=f"{path}/Report_Positivas.html")
 
 # Report Neutras
 profile_neutra = pr(df_neutra, title='Report Geral Reviews Alexa - Avaliações Neutras', html={'style':{'full_width':True}})
 
 profile_neutra.to_notebook_iframe()
 
-profile_neutra.to_file(output_file=f"{path}/Reports-html/Report_Neutras.html")
+profile_neutra.to_file(output_file=f"{path}/Report_Neutras.html")
 
 # Report Negativas
 profile_negativa = pr(df_negativa, title='Report Geral Reviews Alexa - Avaliações Negativas', html={'style':{'full_width':True}})
 
 profile_negativa.to_notebook_iframe()
 
-profile_negativa.to_file(output_file=f"{path}/Reports-html/Report_Negativas.html")
+profile_negativa.to_file(output_file=f"{path}/Report_Negativas.html")
 
-df_positiva.to_csv(f"{path}/sheets/df_positiva.csv", index=False)               
-df_neutra.to_csv(f"{path}/sheets/df_neutra.csv", index=False)                   
-df_negativa.to_csv(f"{path}/sheets/df_negativa.csv", index=False) 
+df_positiva.to_csv(f"{path}/df_positiva.csv", index=False)               
+df_neutra.to_csv(f"{path}/df_neutra.csv", index=False)                   
+df_negativa.to_csv(f"{path}/df_negativa.csv", index=False) 
 
-from banco.request_database import database
-database()
+print('_____________ Acionando o Banco _____________')
 
-def etc():
-    path = os.getcwd()
-    dir = os.listdir(f'{path}/sheets')
-    for file in dir:
-        if file == "df_negativa.csv":
-            os.remove(file)
+import request_database
+print(request_database)
+
+
+
             
 ##########################  Package Tools ########################## 
 # Gerar planilha completa pela primeira vez:                       #
