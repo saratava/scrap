@@ -5,7 +5,7 @@
     <img src="https://github.com/saractavares/scraping-python-google-play-scraper/blob/main/readme/logo-scrap.png?raw=true" alt="Logo" width="150" height="150">
   </a>
 
-  <h1 align="center">App Scraping Usando Python</h1>
+  <h1 align="center">Scraping Usando Python</h1>
 
   <p align="center">
     Um projeto de coleta, limpeza e armazenamento de dados provenientes da Google Play Store.
