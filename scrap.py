@@ -7,7 +7,7 @@ import os
 
 # App Scraping Alexa - google play
 br_reviews = reviews_all(
-    'com.amazon.dee.app',
+    'org.telegram.messenger',
     lang='pt',
     sleep_milliseconds=0,
     country='br',
@@ -67,5 +67,5 @@ df_negativa.to_csv(f"{path}/backup_csv/df_negativa.csv", index=False)
 
 print('_____________ Acionando o Banco _____________')
 
-import request_database
-print(request_database)
+# import request_database
+# print(request_database)
