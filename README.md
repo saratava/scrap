@@ -2,15 +2,18 @@
 <br />
 <div align="center">
   <a href="https://github.com/saractavares/scraping-python-google-play-scraper">
-    <img src="https://github.com/saractavares/scraping-python-google-play-scraper/blob/main/readme/logo-scrap.png?raw=true" alt="Logo" width="150" height="150">
+   <img src="https://github.com/saractavares/scraping-python-google-play-scraper/blob/main/readme/logo-scrap.png?raw=true" alt="Logo" width="150" height="150">
   </a>
 
   <h1 align="center">Scraping Usando Python</h1>
-
+ Este projeto permite coletar reviews de qualquer app na google play store, você só precisa trocar o ID da função reviews_all().
+  <br></br>
   <p align="center">
+  <h4>App Sendo Coletado Nesse Momento = Telegram</h4>
     Um projeto de coleta, limpeza e armazenamento de dados provenientes da Google Play Store.
-    <br />
+    <br></br>
     <a href="https://github.com/saractavares/scraping-python-google-play-scraper"><strong>Explore os arquivos »</strong></a>
+    <br></br>
     <div style="display: inline_block">
      <img align="center" alt="sara-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
      <img align="center" alt="sara-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
