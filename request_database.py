@@ -19,9 +19,10 @@ def positivas():
     input_file = csv.DictReader(open("df_positiva.csv", encoding='utf-8'))
 
     for row in input_file:
-        
-        cursor.execute("insert into mydatabase.aval_positiva (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) values (%s, %s, %s, %s, %s, %s)", (row['content'], row['score'], row['thumbsUpCount'], row['reviewCreatedVersion'],
-                                                                                                                                                                        row['at'], row['replyContent']))
+        cursor.execute(
+            "insert into mydatabase.aval_positiva (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) values (%s, %s, %s, %s, %s, %s)",
+            (row['content'], row['score'], row['thumbsUpCount'], row['reviewCreatedVersion'],
+             row['at'], row['replyContent']))
     cnx.commit()
 
 
@@ -36,9 +37,10 @@ def neutras():
     input_file = csv.DictReader(open("df_neutra.csv", encoding='utf-8'))
 
     for row in input_file:
-        
-        cursor.execute("insert into mydatabase.aval_neutra (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) values (%s, %s, %s, %s, %s, %s)", (row['content'], row['score'], row['thumbsUpCount'], row['reviewCreatedVersion'],
-                                                                                                                                                                      row['at'], row['replyContent']))
+        cursor.execute(
+            "insert into mydatabase.aval_neutra (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) values (%s, %s, %s, %s, %s, %s)",
+            (row['content'], row['score'], row['thumbsUpCount'], row['reviewCreatedVersion'],
+             row['at'], row['replyContent']))
     cnx.commit()
 
 
@@ -53,9 +55,10 @@ def negativas():
     input_file = csv.DictReader(open("df_negativa.csv", encoding='utf-8'))
 
     for row in input_file:
-        
-        cursor.execute("insert into mydatabase.aval_negativa (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) values (%s, %s, %s, %s, %s, %s)", (row['content'], row['score'], row['thumbsUpCount'], row['reviewCreatedVersion'],
-                                                                                                                                                                        row['at'], row['replyContent']))
+        cursor.execute(
+            "insert into mydatabase.aval_negativa (content, score, thumbsUpCount, reviewCreatedVersion, at, replyContent) values (%s, %s, %s, %s, %s, %s)",
+            (row['content'], row['score'], row['thumbsUpCount'], row['reviewCreatedVersion'],
+             row['at'], row['replyContent']))
     cnx.commit()
 
 
@@ -64,8 +67,11 @@ print('tabela negativas ok')
 
 print('_____________ Finalizando o Banco _____________')
 
+
 # CHAMANDO A LIMPEZA DA RAIZ
 def limpar():
     import limpardf
     limpardf.etc
+
+
 limpar()
