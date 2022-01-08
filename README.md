@@ -9,7 +9,7 @@
  Este projeto permite coletar reviews de qualquer app na google play store, você só precisa trocar o ID da função reviews_all().
   <br></br>
   <p align="center">
-  <h4>App Sendo Coletado Nesse Momento = Telegram</h4>
+  <h4>App Sendo Coletado Nesse Momento = Alexa </h4>
     Um projeto de coleta, limpeza e armazenamento de dados provenientes da Google Play Store.
     <br></br>
     <a href="https://github.com/saractavares/scraping-python-google-play-scraper"><strong>Explore os arquivos »</strong></a>
