@@ -1,4 +1,4 @@
 /gitignore
-/backup_csv
-/backup_report
+/page_backup
+/tables_backup
 /__pycache__
