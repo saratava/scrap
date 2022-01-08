@@ -1,5 +1,5 @@
 function transform(line) {
-    var values = line.split(';');
+    var values = line.split('|');
     var obj = new Object();
     obj.content = values[0];
     obj.score = values[1];

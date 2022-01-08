@@ -5,11 +5,11 @@
     },
     {
       "name": "score",
-      "type": "STRING"
+      "type": "INTEGER"
     },
     {
       "name": "thumbsUpCount",
-      "type": "STRING"
+      "type": "INTEGER"
     },
     {
       "name": "reviewCreatedVersion",
@@ -17,7 +17,7 @@
     },
     {
       "name": "at",
-      "type": "STRING"
+      "type": "DATETIME"
     },
     {
       "name": "replyContent",
