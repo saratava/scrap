@@ -1,0 +1,27 @@
+{
+  "BigQuery Schema": [{
+      "name": "content",
+      "type": "STRING"
+    },
+    {
+      "name": "score",
+      "type": "STRING"
+    },
+    {
+      "name": "thumbsUpCount",
+      "type": "STRING"
+    },
+    {
+      "name": "reviewCreatedVersion",
+      "type": "STRING"
+    },
+    {
+      "name": "at",
+      "type": "STRING"
+    },
+    {
+      "name": "replyContent",
+      "type": "STRING"
+    }
+  ]
+}

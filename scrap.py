@@ -59,17 +59,10 @@ profile_negativa.to_notebook_iframe()
 profile_negativa.to_file(output_file=f"{path}/Report_Negativas.html")
 profile_negativa.to_file(output_file=f"{path}/page_backup/Report_Negativas.html")
 
-# Ajustando para o BQ
-# df_p = df_positiva.applymap(lambda x: x.replace("r", " "))
-# df_p = df_positiva.applymap(lambda x: x.replace("n", " "))
-# df_nt = df_neutra.applymap(lambda x: x.replace("r", " "))
-# df_nt = df_neutra.applymap(lambda x: x.replace("n", " "))
-# df_neg = df_negativa.applymap(lambda x: x.replace("r", " "))
-# df_neg = df_negativa.applymap(lambda x: x.replace("n", " "))
 
 # Salvando localmente as tabelas que serão inseridas no banco
-df_positiva.to_csv(f"{path}/df_positiva.csv", index=False, header=False)
-df_neutra.to_csv(f"{path}/df_neutra.csv", index=False, header=False)
+df_positiva.to_csv(f"{path}/df_positiva.csv", index=False)
+df_neutra.to_csv(f"{path}/df_neutra.csv", sep=";", index=False, header=False)
 df_negativa.to_csv(f"{path}/df_negativa.csv", index=False, header=False)
 
 # Backup de tabelas já consumidas, para histórico
