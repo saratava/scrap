@@ -6,7 +6,7 @@ import time
 path = os.getcwd()
 
 credentials = service_account.Credentials.from_service_account_file(
-    f'{path}/credentials/scrap-sauter-b84203485905.json',
+    f'{path}/main/scraping-python-google-play-scraper/database/credentials/scrap-sauter-b84203485905.json',
 )
 
 
