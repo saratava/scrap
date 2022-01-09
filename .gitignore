@@ -1,4 +1,4 @@
-/gitignore
 /page_backup
 /tables_backup
 /__pycache__
+/database/credentials

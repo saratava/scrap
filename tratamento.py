@@ -5,7 +5,7 @@ from scrap import br_reviews
 
 df_reviews = pd.DataFrame(np.array(br_reviews), columns=['review'])
 df_completa = df_reviews.join(pd.DataFrame(df_reviews.pop('review').tolist()))
-df_final = df_completa.drop(columns=['reviewId', 'userName', 'userImage', 'repliedAt'], axis=1)
+df_final = df_completa.drop(columns=['reviewId', 'userName', 'userImage', 'repliedAt'])
 
 # # transformando os types
 # df = df_final.astype({"content": str, "score": int, "thumbsUpCount": int, "reviewCreatedVersion": str, 'at': int, "replyContent": str})  # não serviu até aqui
@@ -20,10 +20,16 @@ df_neutra = df_final[filtro_neutra]
 filtro_negativa = df_final['score'] < 3
 df_negativa = df_final[filtro_negativa]
 
-# Retirando linhas com score null
-df_positiva['content'] = df_positiva['content'].map(lambda x: x.strip('\n'))  # continuar daqui = retirar \n e \r de comentários. Regex?
+# Retirando possíveis elementos de quebra de linha
+df_positiva['content'] = df_positiva['content'].map(lambda x: x.replace('\n', ' '))
+df_positiva['content'] = df_positiva['content'].map(lambda x: x.replace('\r', ' '))
+
+df_neutra['content'] = df_neutra['content'].map(lambda x: x.replace('\n', ' '))
+df_neutra['content'] = df_neutra['content'].map(lambda x: x.replace('\r', ' '))
+
+df_negativa['content'] = df_negativa['content'].map(lambda x: x.replace('\n', ' '))
+df_negativa['content'] = df_negativa['content'].map(lambda x: x.replace('\r', ' '))
 
 print('_____________ Acionando a Fábrica de Arquivos _____________')
+
 import file_factory
-
-
